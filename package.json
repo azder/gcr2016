@@ -1,0 +1,22 @@
+{
+  "name": "gcd2016",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azder/gcr2016.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azder/gcr2016/issues"
+  },
+  "homepage": "https://github.com/azder/gcr2016#readme",
+  "devDependencies": {
+    "jest": "^16.0.2"
+  }
+}
