@@ -1,1 +1,3 @@
-# gcr2016
+# GDCR2016
+
+Check Branches for sessions
