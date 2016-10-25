@@ -1,21 +1,37 @@
-/**
- * Created by azder on 2016-10-22.
- */
-
 'use strict'; // ALWAYS
 
 const Address = require('./address');
-const City = require('./city.js');
+
+const ident = a => a;
+const noop = ()=> {
+};
+
+// executres fn only if test returns true
+const iff = (test, fn) => test() ? fn() : noop();
+
+const print = (...args) => console.log(...args);
+
+class City {
+
+    constructor() {
+        this.population = new Map();
+    }
+
+    exists(address) {
+        return this.population.has(address);
+    }
+
+    add(address, person) {
+        this.exists(address) || this.population.set(address, person);
+    }
+
+}
 
 const skopje = new City();
 
-const five = Address.a2(5, 5);
-const six = Address.a2(6, 6);
+const center = Address.random();
+const neighbours = center.neighbours();
 
-skopje.add(five, Person.from({name: 'goran'}));
-skopje.add(six, Person.from({name: 'damjan'}));
+skopje.add(center, {name: 'goran'});
 
-console.log({
-         skopje,
-    pop: skopje.people()
-});
+print(skopje, center, neighbours);
